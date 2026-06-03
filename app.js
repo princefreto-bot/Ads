@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (videoContainer && videoOverlay) {
     videoOverlay.addEventListener('click', () => {
-      // Replace video-container with YouTube Short embed
-      videoContainer.innerHTML = '<iframe src="https://www.youtube.com/embed/ueEQGYHTebI?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      // Replace video-container with YouTube Short embed optimized for mobile & iOS instant loading
+      videoContainer.innerHTML = '<iframe src="https://www.youtube.com/embed/ueEQGYHTebI?autoplay=1&rel=0&playsinline=1&enablejsapi=1&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     });
   }
 
