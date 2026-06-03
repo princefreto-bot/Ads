@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Video Overlay Cover Handler
+  const videoContainer = document.getElementById('video-container');
   const videoOverlay = document.getElementById('video-overlay-cover');
-  const promoVideo = document.getElementById('promo-video');
 
-  if (videoOverlay && promoVideo) {
+  if (videoContainer && videoOverlay) {
     videoOverlay.addEventListener('click', () => {
-      videoOverlay.style.display = 'none';
-      promoVideo.play();
+      // Replace video-container with YouTube Short embed
+      videoContainer.innerHTML = '<iframe src="https://www.youtube.com/embed/ueEQGYHTebI?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     });
   }
 

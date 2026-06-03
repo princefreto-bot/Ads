@@ -4,45 +4,13 @@ Ce dossier contient une landing page professionnelle, moderne et responsive, opt
 
 ---
 
-## 🛠️ Configuration Initiale (Avant Déploiement)
+## 🛠️ Configuration Actuelle
 
-### 1. Remplacer le lien de la formation
-Ouvrez le fichier `index.html` et remplacez l'adresse temporaire `https://FORMATION-LINK-HERE.com` par votre propre lien de redirection de formation (Lien d'achat, de paiement, de groupe WhatsApp/Telegram ou autre).
-Il y a 3 occurrences dans le fichier :
-*   Ligne 31 : Le bouton Hero (`id="hero-cta"`)
-*   Ligne 173 : Le bouton final en bas de page
-*   Ligne 180 : Le bouton flottant mobile (`id="sticky-cta-bar"`)
+Vos liens réels ont déjà été intégrés avec succès dans le code de la landing page :
+*   **Lien d'inscription à la formation** : [https://wcxedfia.mychariow.shop/prd_pvcwt3ek/checkout](https://wcxedfia.mychariow.shop/prd_pvcwt3ek/checkout) (configuré dans tous les boutons).
+*   **Vidéo explicative (YouTube Short)** : [https://youtube.com/shorts/ueEQGYHTebI](https://youtube.com/shorts/ueEQGYHTebI) (configurée en lecteur responsive dynamique).
 
-### 2. Ajouter votre vidéo de présentation
-Ouvrez le fichier `index.html` à la ligne 49 et insérez le lien de votre vidéo dans l'attribut `src` de la balise `<source>`.
-
----
-
-## 📹 Comment héberger votre vidéo de présentation gratuitement ?
-
-Pour maintenir la landing page 100% gratuite à faire tourner, voici les deux meilleures méthodes pour héberger votre vidéo explicative :
-
-### Option A : Hébergement Supabase (Recommandé - Sans Publicité & 100% Pro)
-Puisque vous avez déjà un projet Supabase pour la plateforme scolaire, profitez de son stockage gratuit (jusqu'à 1 Go) :
-1.  Connectez-vous à votre tableau de bord **Supabase**.
-2.  Allez dans l'onglet **Storage** (Stockage).
-3.  Créez un nouveau Bucket nommé `videos` et configurez-le en **Public** (très important pour que la vidéo se charge sur le site).
-4.  Téléversez votre vidéo au format `.mp4` (ex: `presentation.mp4`).
-5.  Une fois téléversée, cliquez sur le fichier et copiez l'**URL publique** (Get URL).
-6.  Collez cette URL dans votre `index.html` à la ligne 49 :
-    ```html
-    <source src="https://votre-url-supabase/storage/v1/object/public/videos/presentation.mp4" type="video/mp4">
-    ```
-
-### Option B : YouTube (Ultra-simple, bande passante illimitée)
-1.  Téléversez votre vidéo sur YouTube.
-2.  Configurez la visibilité en **Non répertoriée** (Unlisted) pour qu'elle ne soit visible que sur votre site et pas sur votre chaîne publique.
-3.  Copiez le code d'intégration (Embed code).
-4.  Remplacez le bloc `<video>` dans `index.html` par l'iframe YouTube fourni. Exemple :
-    ```html
-    <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO?rel=0&autoplay=0" allowfullscreen></iframe>
-    ```
-    *Note : le style CSS se chargera de le rendre responsive automatiquement.*
+Tout est prêt, aucune modification supplémentaire n'est requise. Vous pouvez lancer le déploiement directement.
 
 ---
 
