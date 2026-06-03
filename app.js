@@ -78,16 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile Sticky Bottom CTA display controller
   const stickyCtaBar = document.getElementById('sticky-cta-bar');
-  const heroCta = document.getElementById('hero-cta');
+  const firstCta = document.getElementById('first-cta');
 
-  if (stickyCtaBar && heroCta) {
+  if (stickyCtaBar && firstCta) {
     window.addEventListener('scroll', () => {
       // Check if we are on a mobile screen
       if (window.innerWidth < 768) {
-        const heroCtaBottom = heroCta.getBoundingClientRect().bottom + window.scrollY;
+        const firstCtaBottom = firstCta.getBoundingClientRect().bottom + window.scrollY;
         
-        // Show sticky bar once scrolled past the main hero CTA button
-        if (window.scrollY > heroCtaBottom - 100) {
+        // Show sticky bar once scrolled past the first CTA button
+        if (window.scrollY > firstCtaBottom - 100) {
           stickyCtaBar.classList.add('visible');
         } else {
           stickyCtaBar.classList.remove('visible');
