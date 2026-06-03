@@ -98,48 +98,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Countdown Timer Logic (15-Minute rolling timer stored in localStorage)
+  // Countdown Timer Logic (24-Hour real-world timer resetting at midnight)
   const countdownTimer = document.getElementById('countdown-timer');
-  const countdownTextElements = document.querySelectorAll('.countdown-text');
 
-  if (countdownTimer || countdownTextElements.length > 0) {
-    const COUNTDOWN_DURATION = 15 * 60; // 15 minutes in seconds
-    let startTime = localStorage.getItem('saas_countdown_start');
-    
-    if (!startTime) {
-      startTime = Math.floor(Date.now() / 1000);
-      localStorage.setItem('saas_countdown_start', startTime);
-    } else {
-      startTime = parseInt(startTime, 10);
-    }
-
+  if (countdownTimer) {
     function updateTimer() {
-      const now = Math.floor(Date.now() / 1000);
-      let elapsed = now - startTime;
-      let remaining = COUNTDOWN_DURATION - elapsed;
-
-      if (remaining <= 0) {
-        // Reset timer when it ends
-        startTime = Math.floor(Date.now() / 1000);
-        localStorage.setItem('saas_countdown_start', startTime);
-        remaining = COUNTDOWN_DURATION;
+      const now = new Date();
+      // Set to midnight of the current day (23:59:59.999)
+      const midnight = new Date();
+      midnight.setHours(23, 59, 59, 999);
+      
+      let diff = midnight.getTime() - now.getTime();
+      if (diff < 0) {
+        diff = 0;
       }
-
-      const minutes = Math.floor(remaining / 60);
-      const seconds = remaining % 60;
+      
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
       const formattedTime = 
+        (hours < 10 ? '0' : '') + hours + ':' + 
         (minutes < 10 ? '0' : '') + minutes + ':' + 
         (seconds < 10 ? '0' : '') + seconds;
-
-      if (countdownTimer) {
-        countdownTimer.textContent = formattedTime;
-      }
-      countdownTextElements.forEach(el => {
-        el.textContent = formattedTime;
-      });
+      
+      countdownTimer.textContent = formattedTime;
     }
-
+    
     updateTimer();
     setInterval(updateTimer, 1000);
   }
+
 });
+
