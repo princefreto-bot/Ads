@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Math calculation
     const monthly = schools * students * price;
-    const annual = monthly * 12;
+    const annual = monthly * 10; // Calculé sur 10 mois d'année scolaire active
 
     // Display formatted results
     resultMonthly.textContent = formatFCFA(monthly);
-    resultAnnual.textContent = 'Soit ' + formatFCFA(annual) + ' / an';
+    resultAnnual.textContent = 'Soit ' + formatFCFA(annual) + ' / an (sur 10 mois)';
   }
 
   // Add event listeners to calculator range controls
