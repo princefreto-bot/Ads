@@ -65,16 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Video Overlay Cover Handler
-  const videoContainer = document.getElementById('video-container');
-  const videoOverlay = document.getElementById('video-overlay-cover');
-
-  if (videoContainer && videoOverlay) {
-    videoOverlay.addEventListener('click', () => {
-      // Replace video-container with YouTube Short embed optimized for mobile & iOS instant loading
-      videoContainer.innerHTML = '<iframe src="https://www.youtube.com/embed/ueEQGYHTebI?autoplay=1&rel=0&playsinline=1&enablejsapi=1&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-    });
-  }
 
   // Mobile Sticky Bottom CTA display controller
   const stickyCtaBar = document.getElementById('sticky-cta-bar');
