@@ -35,6 +35,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -42,6 +44,13 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.page-wrapper {
+  width: 100%;
   overflow-x: hidden;
   position: relative;
 }
