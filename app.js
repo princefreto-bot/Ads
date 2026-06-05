@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Countdown Timer Logic (24-Hour real-world timer resetting at midnight)
-  const countdownTimer = document.getElementById('countdown-timer');
+  const countdownTimers = document.querySelectorAll('.countdown-timer-val');
 
-  if (countdownTimer) {
+  if (countdownTimers.length > 0) {
     function updateTimer() {
       const now = new Date();
       // Set to midnight of the current day (23:59:59.999)
@@ -112,7 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
         (minutes < 10 ? '0' : '') + minutes + ':' + 
         (seconds < 10 ? '0' : '') + seconds;
       
-      countdownTimer.textContent = formattedTime;
+      countdownTimers.forEach(timer => {
+        timer.textContent = formattedTime;
+      });
     }
     
     updateTimer();
