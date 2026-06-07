@@ -1080,8 +1080,10 @@ footer {
 }
 
 .coach-avatar-wrapper {
-  width: 160px;
-  height: 160px;
+  width: 280px;
+  height: 280px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--primary-light);
