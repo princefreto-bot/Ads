@@ -1064,3 +1064,52 @@ footer {
     display: none !important; /* Hide sticky bar on tablet/desktop */
   }
 }
+
+/* Coach Section Styling */
+.coach-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.coach-avatar-wrapper {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-light);
+  box-shadow: 0 0 15px var(--primary-glow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark);
+}
+
+.coach-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.coach-info {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .coach-profile {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .coach-avatar-wrapper {
+    flex-shrink: 0;
+  }
+}
