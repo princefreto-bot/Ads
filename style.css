@@ -1,12 +1,13 @@
 :root {
-  --navy: #1e293b;
-  --red: #e11d2e;
-  --green: #34c759;
-  --bg: #f5f7fa;
+  --brand: #820000;
+  --brand-dark: #4d0000;
+  --brand-light: #b3001b;
+  --gold: #f2b705;
+  --bg: #f7f3f2;
   --card-bg: #ffffff;
-  --border: #e0e5ec;
-  --text: #1e293b;
-  --text-muted: #64748b;
+  --border: #e8dcdb;
+  --text: #241010;
+  --text-muted: #6b5555;
 }
 
 * { box-sizing: border-box; }
@@ -25,17 +26,46 @@ body {
   padding: 0 24px;
 }
 
+.lang-switch {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 50;
+  display: flex;
+  gap: 4px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 999px;
+  padding: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: var(--gold);
+  color: #2a1900;
+}
+
 .hero {
-  background: linear-gradient(160deg, var(--navy), #0f172a);
+  background: radial-gradient(circle at 30% 0%, var(--brand-light), var(--brand) 45%, var(--brand-dark) 100%);
   color: white;
-  padding: 72px 0 56px;
+  padding: 88px 0 60px;
   text-align: center;
 }
 
 .badge {
   display: inline-block;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.3);
   border-radius: 999px;
   padding: 6px 16px;
   font-size: 13px;
@@ -43,15 +73,16 @@ body {
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 46px;
   margin: 0 0 16px;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
   max-width: 640px;
   margin: 0 auto 32px;
-  color: rgba(255,255,255,0.85);
-  font-size: 17px;
+  color: rgba(255,255,255,0.92);
+  font-size: 18px;
 }
 
 .cta-row {
@@ -63,30 +94,30 @@ body {
 
 .btn {
   display: inline-block;
-  padding: 14px 28px;
+  padding: 14px 30px;
   border-radius: 10px;
   font-weight: 700;
   text-decoration: none;
   font-size: 15px;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.btn:hover { transform: translateY(-2px); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
 
 .btn-primary {
-  background: var(--green);
-  color: #06280f;
+  background: var(--gold);
+  color: #2a1900;
 }
 
 .btn-secondary {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.14);
   color: white;
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .fineprint {
   margin-top: 18px;
   font-size: 13px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.7);
 }
 
 main { padding: 56px 0; }
@@ -95,6 +126,7 @@ h2 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 32px;
+  color: var(--brand-dark);
 }
 
 .features .grid {
@@ -106,6 +138,7 @@ h2 {
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);
+  border-left: 3px solid var(--brand);
   border-radius: 14px;
   padding: 24px;
 }
@@ -119,9 +152,9 @@ h2 {
 .video-note {
   max-width: 620px;
   margin: 0 auto 20px;
-  background: #fff7ed;
-  border: 1px solid #fdba74;
-  color: #7c2d12;
+  background: #fff1e6;
+  border: 1px solid var(--brand-light);
+  color: var(--brand-dark);
   padding: 14px 18px;
   border-radius: 10px;
   font-size: 14px;
@@ -142,11 +175,20 @@ h2 {
 
 .pricing { text-align: center; }
 
+.pricing-tutorial-note {
+  max-width: 520px;
+  margin: 0 auto 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
 .pricing-box {
   max-width: 480px;
   margin: 0 auto;
   background: var(--card-bg);
   border: 1px solid var(--border);
+  border-top: 4px solid var(--brand);
   border-radius: 16px;
   padding: 32px;
 }
@@ -170,9 +212,9 @@ h2 {
   margin-top: 8px;
   font-size: 18px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--brand);
   text-decoration: none;
-  border-bottom: 2px solid var(--green);
+  border-bottom: 2px solid var(--gold);
 }
 
 footer {
