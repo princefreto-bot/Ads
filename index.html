@@ -68,8 +68,15 @@
   <section class="container video-section">
     <h2 data-i18n="video.title">📺 Tutoriel vidéo</h2>
     <p class="video-note" data-i18n="video.note">⚠️ <strong>Suis le tutoriel avant de commencer</strong> — ça t'évite les erreurs classiques et ça te fait gagner du temps.</p>
-    <div class="video-placeholder">
-      <p data-i18n="video.soon">Le tutoriel vidéo arrive bientôt ici.</p>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/3Mn4QWlGKss"
+        title="Tutoriel Détecteur de Pixels"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
     </div>
   </section>
 
@@ -127,7 +134,6 @@ const I18N = {
     "features.f6.text": "Fenêtre redimensionnable, bascule plein écran en un clic (F11).",
     "video.title": "📺 Tutoriel vidéo",
     "video.note": "⚠️ <strong>Suis le tutoriel avant de commencer</strong> — ça t'évite les erreurs classiques et ça te fait gagner du temps.",
-    "video.soon": "Le tutoriel vidéo arrive bientôt ici.",
     "pricing.title": "Essai gratuit, puis abonnement simple",
     "pricing.tutorialNote": "📺 Suis le tutoriel avant de t'abonner — tu sauras exactement ce que tu obtiens.",
     "pricing.p1": "✅ 14 jours d'essai gratuit, aucune carte bancaire requise",
@@ -162,7 +168,6 @@ const I18N = {
     "features.f6.text": "Resizable window, one-click fullscreen toggle (F11).",
     "video.title": "📺 Video tutorial",
     "video.note": "⚠️ <strong>Follow the tutorial before you start</strong> — it saves you the classic mistakes and saves you time.",
-    "video.soon": "The video tutorial is coming soon here.",
     "pricing.title": "Free trial, then a simple subscription",
     "pricing.tutorialNote": "📺 Follow the tutorial before subscribing — you'll know exactly what you're getting.",
     "pricing.p1": "✅ 14-day free trial, no card required",
