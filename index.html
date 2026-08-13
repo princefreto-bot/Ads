@@ -254,6 +254,18 @@
         <p class="eyebrow" style="justify-content:center">Offre spéciale</p>
         <h2 class="section-title">Un seul paiement, <span class="hl">tout à vie</span></h2>
       </div>
+
+      <div class="countdown reveal" aria-live="polite">
+        <span class="cd-label">⏳ L'offre à 3 500 FCFA se termine dans</span>
+        <div class="cd-timer">
+          <div class="cd-box"><b id="cd-h">00</b><span>Heures</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-box"><b id="cd-m">00</b><span>Min</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-box"><b id="cd-s">00</b><span>Sec</span></div>
+        </div>
+      </div>
+
       <div class="price-card reveal">
         <span class="ribbon">Pack complet</span>
         <div class="big"><b>3 500</b> <span class="cur">FCFA</span></div>
@@ -347,6 +359,27 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Compte à rebours jusqu'à minuit — basé sur l'horloge réelle,
+  // donc recharger la page ne le réinitialise pas ; il repart seul à 00:00.
+  (function () {
+    const h = document.getElementById('cd-h'),
+          m = document.getElementById('cd-m'),
+          s = document.getElementById('cd-s');
+    if (!h) return;
+    const pad = (n) => String(n).padStart(2, '0');
+    function tick() {
+      const now = new Date();
+      const midnight = new Date(now);
+      midnight.setHours(24, 0, 0, 0); // prochain minuit local
+      let d = Math.max(0, Math.floor((midnight - now) / 1000));
+      h.textContent = pad(Math.floor(d / 3600));
+      m.textContent = pad(Math.floor((d % 3600) / 60));
+      s.textContent = pad(d % 60);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
 
   // FAQ accordéon
   document.querySelectorAll('.faq-q').forEach((btn) => {

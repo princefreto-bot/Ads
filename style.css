@@ -623,6 +623,61 @@ h2.section-title {
 .price-card .btn { width: 100%; }
 .price-card .reassure { margin-top: 16px; font-size: 13px; color: var(--muted-2); }
 
+/* ---------- Countdown ---------- */
+.countdown { text-align: center; margin: 0 auto 34px; }
+.cd-label {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.4px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+.cd-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.cd-box {
+  background: linear-gradient(165deg, var(--surface-2), var(--ink-2));
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 14px 10px;
+  min-width: 82px;
+  box-shadow: 0 14px 32px -18px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.cd-box b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.cd-box span {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin-top: 7px;
+}
+.cd-sep {
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--brand-3);
+  font-weight: 700;
+  padding-bottom: 18px;
+}
+@media (max-width: 420px) {
+  .cd-box { min-width: 66px; padding: 12px 6px; }
+  .cd-box b { font-size: 32px; }
+  .cd-sep { font-size: 24px; }
+  .cd-label { font-size: 13.5px; }
+}
+
 /* ---------- FAQ ---------- */
 .faq-list { max-width: 780px; margin: 0 auto; display: grid; gap: 12px; }
 .faq-item {
