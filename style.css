@@ -281,6 +281,7 @@ h2.section-title {
 }
 .price-now b { color: var(--gold); }
 .price-meta { font-size: 14px; color: var(--muted); }
+.price-meta s { color: var(--muted-2); }
 .price-meta .tag {
   display: inline-block;
   background: rgba(168, 0, 16, 0.18);
@@ -304,11 +305,42 @@ h2.section-title {
 .hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
 .hero-trust .dot { color: var(--gold); font-size: 16px; }
 
+/* Money hook */
+.money-hook {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 30px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background:
+    radial-gradient(400px 120px at 0% 0%, rgba(230, 194, 122, 0.14), transparent 70%),
+    linear-gradient(160deg, var(--surface-2), var(--ink-2));
+  border: 1px solid rgba(230, 194, 122, 0.3);
+}
+.mh-amount {
+  flex: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--gold);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+.mh-amount small { display: block; font-size: 12px; color: var(--muted); letter-spacing: 1px; margin-top: 4px; }
+.mh-text { font-size: 14px; color: var(--muted); }
+.mh-text b { color: var(--text); font-weight: 700; }
+@media (max-width: 560px) {
+  .money-hook { flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; }
+  .mh-amount { font-size: 26px; }
+}
+
 /* Product visual / image placeholder */
 .hero-visual { position: relative; }
 .product-frame {
   position: relative;
-  aspect-ratio: 4 / 3.2;
+  aspect-ratio: 1149 / 1369;
   border-radius: 22px;
   overflow: hidden;
   background: linear-gradient(160deg, var(--surface-2), var(--ink-2));
@@ -327,7 +359,7 @@ h2.section-title {
   z-index: 2;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .product-placeholder {
