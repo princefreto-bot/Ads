@@ -692,11 +692,12 @@ footer {
   gap: 20px;
   flex-wrap: wrap;
 }
-.foot-mail {
+.foot-cta {
   color: var(--gold);
   font-weight: 700;
   text-decoration: none;
   border-bottom: 1px solid rgba(230, 194, 122, 0.4);
+  white-space: nowrap;
 }
 .foot-copy { color: var(--muted-2); font-size: 13.5px; }
 

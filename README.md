@@ -26,6 +26,6 @@ qu'elle n'existe pas et laisse le placeholder visible.)
 Modifiez `index.html` / `style.css`, puis redéployez (push GitHub → Render se
 met à jour automatiquement).
 
-## Contact
+## Contact / vente
 
-`princefreto@gmail.com` (affiché sur la page).
+Toutes les CTA pointent vers la boutique Chariow : `https://aswpwbza.mychariow.com/prd_ibsrs9oi`.
