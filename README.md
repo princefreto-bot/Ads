@@ -1,31 +1,31 @@
-# Page de téléchargement — Détecteur de Pixels
+# Pack Formations PRO — Tunnel de vente
 
-Ce dossier contient la landing page statique de téléchargement du logiciel
-**Détecteur de Pixels**, déployée sur Render à l'URL
-`https://ads-g8aa.onrender.com/`.
+Landing page (tunnel de vente) statique pour le **Pack Formations PRO** :
+5 formations digitales (Photoshop, CapCut, SEO, Création de site avec l'IA,
+Community Management) réunies en un seul pack.
+
+Déployée sur Render à l'URL `https://ads-g8aa.onrender.com/`.
+Boutique / checkout : `https://aswpwbza.mychariow.com/prd_ibsrs9oi`.
 
 ## Contenu
 
-- `index.html` / `style.css` / `favicon.svg` — la page elle-même
-- `DetecteurPixels-Setup.exe` — l'installateur Windows téléchargeable
-  directement depuis les boutons de la page
+- `index.html` — la page de vente (structure : hero, programme des 5 formations,
+  ce qui est inclus, public cible, offre 3 500 FCFA, FAQ, CTA finale).
+- `style.css` — design premium (noir + `#820000`).
+- `favicon.svg` — icône (toque de diplômé).
 
-## Mettre à jour l'installateur
+## Image du produit
 
-Quand une nouvelle version du logiciel est prête :
-1. Remplace `DetecteurPixels-Setup.exe` par le nouveau build.
-2. Redéploie ce dossier sur Render (push GitHub ou déploiement manuel selon
-   ta configuration).
-3. Dis-le à Claude pour qu'il mette à jour l'Edge Function `dp-version` avec
-   le nouveau numéro de version, afin que l'appli notifie automatiquement
-   les utilisateurs de la mise à jour disponible.
+Un emplacement est réservé dans le hero. Déposez simplement le fichier
+**`product.png`** à la racine du dossier : il remplacera automatiquement le
+cadre « Image du produit ». (Le `<img>` a un `onerror` qui masque l'image tant
+qu'elle n'existe pas et laisse le placeholder visible.)
+
+## Mettre à jour
+
+Modifiez `index.html` / `style.css`, puis redéployez (push GitHub → Render se
+met à jour automatiquement).
 
 ## Contact
 
-`princefreto@gmail.com` (déjà affiché sur la page).
-
-## Tutoriel vidéo
-
-Un emplacement est prévu sur la page (section "📺 Tutoriel vidéo") pour
-intégrer la vidéo YouTube dès qu'elle est prête — donne le lien et il sera
-inséré en lecteur responsive à cet endroit.
+`princefreto@gmail.com` (affiché sur la page).
